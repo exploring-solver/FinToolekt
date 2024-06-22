@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel Processor</title>
+</head>
+<body>
+    <h1>Upload Excel File for Processing</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="file" id="file-input" required>
+        <button type="submit">Upload</button>
+    </form>
+    <div id="loading" style="display: none;">
+        Processing...
+        <ul id="progress-list"></ul>
+    </div>
+    <div id="download-link" style="display: none;">
+        <a id="download-btn" href="#">Download Processed File</a>
+    </div>
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('file-input');
+            const loadingDiv = document.getElementById('loading');
+            const progressList = document.getElementById('progress-list');
+            const downloadLinkDiv = document.getElementById('download-link');
+            const downloadBtn = document.getElementById('download-btn');
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            loadingDiv.style.display = 'block';
+            downloadLinkDiv.style.display = 'none';
+            progressList.innerHTML = '';
+
+            const response = await fetch('http://localhost:3000/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                const { cleanedFilePath } = await response.json();
+                
+                const progressInterval = setInterval(async () => {
+                    const progressResponse = await fetch('http://localhost:3000/progress');
+                    const { progress } = await progressResponse.json();
+                    progressList.innerHTML = '';
+                    progress.forEach(message => {
+                        const li = document.createElement('li');
+                        li.textContent = message;
+                        progressList.appendChild(li);
+                    });
+                    if (progress.includes('Processing completed')) {
+                        clearInterval(progressInterval);
+                        const url = `/${cleanedFilePath}`;
+                        downloadBtn.href = url;
+                        downloadBtn.download = 'cleaned_excel_file.xlsx';
+                        loadingDiv.style.display = 'none';
+                        downloadLinkDiv.style.display = 'block';
+                    }
+                }, 1000);
+            } else {
+                console.error('Upload failed');
+                loadingDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
