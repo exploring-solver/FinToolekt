@@ -71,7 +71,7 @@ function Home() {
       <Slider {...settings}>
         <div className="bg-gray-200 p-2">
           <img
-            className="d-block w-[600px] m-auto"
+            className="d-block  m-auto h-[300px] object-fill"
             src={step1}
             alt="Second slide"
           />
