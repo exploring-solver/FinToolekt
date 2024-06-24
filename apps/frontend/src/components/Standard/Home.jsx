@@ -15,7 +15,7 @@ function Home() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1, 
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -78,7 +78,7 @@ function Home() {
           <div className='w-[600px] m-auto'>
             <h3 className="text-2xl font-bold mb-4">Fraud Detection and Prevention Tool</h3>
             <p className="text-lg text-gray-700 mb-4">
-              To be edited
+              We intend to create a solution for fraud detection and auditing that is specifically designed to help large firms handle their data efficiently. Our technology uses advanced AI algorithms and Generative AI (GenAI) to scan large datasets  
             </p>
           </div>
         </div>
@@ -92,7 +92,7 @@ function Home() {
           <div className='w-[600px] m-auto'>
             <h3 className="text-2xl font-bold mb-4">Audit Helper Tool</h3>
             <p className="text-lg text-gray-700 mb-4">
-              To be edited
+            and detect trends and anomalies that indicates fraudulent activity and an audit assistant tool for data cleaning and sampling of data sheets and excel reports of for analyzing financial and operational losses, we used simple logic construction to ensure thorough and accurate assessments.
             </p>
           </div>
         </div>
@@ -105,7 +105,7 @@ function Home() {
           <div className='w-[600px] m-auto'>
             <h3 className="text-2xl font-bold mb-4">Seemless Extension Integration</h3>
             <p className="text-lg text-gray-700 mb-4">
-              To be edited
+            By combining machine learning and GenAI, we can give real time insights and automated auditing processes, significantly reducing the time and effort necessary for manual checks.
             </p>
           </div>
         </div>
@@ -147,21 +147,16 @@ function Home() {
 
         {/* Text */}
         <div className='lg:w-[40%]'>
-          <h2 className="text-2xl font-bold mb-4 text-gray-700">To be edited content</h2>
+          <h2 className="text-2xl font-bold mb-4 text-gray-700">How are we different from others?</h2>
           <p className="text-lg text-gray-700 mb-4">
-            Our innovative solution allows you to easily <span className="font-bold text-blue-600">digitize your store catalogs with just one click</span>.
-            Say goodbye to manual data entry and tedious processes. With our platform, you can streamline
-            the digitization process and save valuable time and resources.
+            What sets our solution apart from others is the unique combination of fraud detection and auditing tools within a single platform. Currently, there are no comprehensive tools available that specifically aid in the auditing process while simultaneously detecting fraudulent activities.
+
           </p>
           <p className="text-lg text-gray-700 mb-4">
-            Whether you prefer <span className="font-bold text-green-600">text, image, or voice input</span>, our platform supports various input methods
-            to suit your preferences and convenience. Simply upload your catalogs, and our advanced
-            algorithms will handle the rest, converting your catalogs into digital format accurately
-            and efficiently.
+            Our platform fills this gap by providing a dual-functionality solution, enabling companies to not only identify fraud but also conduct thorough audits with ease. By integrating these critical functions, we stand apart from other solutions, offering a more holistic approach to managing financial data and ensuring integrity within large organizations.
           </p>
           <p className="text-lg text-gray-700">
-            Experience the future of catalog management with our <span className="font-bold text-purple-600">intuitive solution</span>. Empower your
-            business with digital transformation and stay ahead of the competition.
+            This new approach not only improves fraud detection accuracy, but also enables organizations to better protect their financial assets and enhances overall security, making our platform a leading tool in the financial technology landscape.
           </p>
         </div>
 
