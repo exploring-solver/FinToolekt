@@ -7,11 +7,12 @@ import FraudDetection from './components/Tools/FraudDetection';
 import NotFound from './components/Standard/NotFound';
 import Help from './components/Standard/Help';
 import About from './components/Standard/About';
+import Footer from './components/Standard/Footer';
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/audit" element={<AuditHelper />} />
@@ -20,6 +21,7 @@ function App() {
         <Route path="/help" element={<Help />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
